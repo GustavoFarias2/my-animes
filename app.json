@@ -1,0 +1,12 @@
+{
+  "name": "my-animes",
+  "displayName": "my-animes",
+  "expo": {
+    "name": "my-animes",
+    "slug": "my-animes",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
