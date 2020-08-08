@@ -11,7 +11,7 @@ const AnimeView: React.FC<FindRouteParamList> = ({ route }) => {
 
   const anime = route.params;
 
-  const [url] = useState({ uri: anime?.attributes.coverImage.original });
+  const [url] = useState({ uri: anime?.attributes.coverImage?.original });
 
   const handleClick = () => {
 
@@ -19,7 +19,9 @@ const AnimeView: React.FC<FindRouteParamList> = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Image source={url} style={styles.image} />
+      {
+        url.uri && <Image source={url} style={styles.image} />
+      }
 
       <ScrollView style={styles.scroll}>
         <Text style={styles.synopsis}>

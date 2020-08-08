@@ -11,12 +11,14 @@ const styles = StyleSheet.create({
   },
   scroll: {
     flex: 1,
-    paddingHorizontal: 20
+    paddingHorizontal: 25
   },
   synopsis: {
     fontSize: 20,
-    marginVertical: 10,
-    fontFamily: 'Archivo_400Regular'
+    marginVertical: 15,
+    fontFamily: 'Archivo_400Regular',
+    lineHeight: 27,
+    letterSpacing:  1.4
   }
 });
 

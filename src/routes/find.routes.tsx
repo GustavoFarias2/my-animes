@@ -26,6 +26,7 @@ const FindRoutes: React.FC = () => (
     <Tabs.Screen
       name="Find"
       component={Find}
+      options={{ headerShown: false }}
     />
 
     <Tabs.Screen

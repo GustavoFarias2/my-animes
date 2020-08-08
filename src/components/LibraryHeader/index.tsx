@@ -8,7 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 const LibraryHeader: React.FC = () => {
 
   const handleClick = () => {
-    alert('clico')
+    alert('clicado')
   }
 
   return (
