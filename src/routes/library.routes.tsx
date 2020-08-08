@@ -11,7 +11,7 @@ type NavigationProps = {
   Library: any | undefined,
 }
 
-export type AppRouteParamList = {
+export type LibraryouteParamList = {
   navigation: MaterialTopTabNavigationProp<NavigationProps>,
   route: RouteProp<NavigationProps, 'Library'>
 }
