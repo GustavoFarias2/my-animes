@@ -1,34 +1,21 @@
 import React from 'react';
 
 import { View, TouchableOpacity, Text } from 'react-native';
+import styles from './styles';
+
 import { Ionicons } from '@expo/vector-icons';
 
 const LibraryHeader: React.FC = () => {
 
+  const handleClick = () => {
+    alert('clico')
+  }
+
   return (
-    <View style={{
-      height: 40,
-      justifyContent: 'center',
-      alignItems: 'flex-end',
-      backgroundColor: '#fff'
-    }}>
-      <TouchableOpacity style={{
-        flexDirection: 'row',
-        alignItems: 'center'
-      }}>
-        <Text style={{
-          fontFamily: 'Archivo_400Regular',
-          fontSize: 16
-        }}>
-          Add tab
-        </Text>
-        <Ionicons
-          name='ios-add-circle-outline'
-          size={32}
-          style={{
-            marginHorizontal: 20
-          }}
-        />
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.touchable} onPress={handleClick}>
+        <Ionicons name='ios-add-circle-outline' size={32} style={styles.icon} />
+        <Text style={styles.add}>Add tab</Text>
       </TouchableOpacity>
     </View>
   )
