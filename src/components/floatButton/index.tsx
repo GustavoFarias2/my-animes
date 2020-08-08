@@ -17,7 +17,7 @@ const FloatButton: React.FC<FloatButtonProps> = ({ action, iconName, color }) =>
     <View style={styles.button_container}>
       <View style={{ ...styles.button_background, ...{ backgroundColor: color ? color : '#1e1e1e' } }}>
         <TouchableOpacity style={styles.button} onPress={action}>
-          <Ionicons name={iconName || 'md-send'} size={30} color='#d1d1d1' />
+          <Ionicons name={iconName || 'md-send'} size={30} color='#fff' />
         </TouchableOpacity>
       </View>
     </View>
