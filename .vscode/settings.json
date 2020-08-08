@@ -1,0 +1,6 @@
+{
+  "files.exclude": {
+    "__tests__": true,
+    ".expo": true
+  }
+}
