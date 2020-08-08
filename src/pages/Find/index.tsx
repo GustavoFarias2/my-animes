@@ -33,7 +33,7 @@ const Find: React.FC = () => {
           ref={formRef}
           onSubmit={handleSubmit}
         >
-          <TextInput name='search' customStyle={{ marginTop: 40 }} placeholder='Search for an Anime' />
+          <TextInput name='search' customStyle={{ marginTop: 20 }} placeholder='Search for an Anime' />
         </Form>
 
         <ScrollView style={{ padding: 10 }}>

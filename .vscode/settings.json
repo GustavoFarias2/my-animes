@@ -1,6 +1,20 @@
 {
   "files.exclude": {
     "__tests__": true,
-    ".expo": true
+    ".expo": true,
+    ".vscode": true,
+    "android": true,
+    "ios": true,
+    "node_modules": true,
+    ".buckconfig": true,
+    ".gitattributes": true,
+    ".gitignore": true,
+    "app.json": true,
+    "babel.config.js": true,
+    "metro.config.js": true,
+    "package.json": true,
+    "yarn.lock": true,
+    "index.tsx": true,
+    "tsconfig.json": true
   }
 }

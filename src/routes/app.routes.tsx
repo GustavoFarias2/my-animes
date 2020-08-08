@@ -5,16 +5,16 @@ import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-naviga
 const Tabs = createBottomTabNavigator();
 
 import Find from '../pages/Find/index';
-import Library from '../pages/Library/index';
+import LibraryRoutes from './library.routes';
 
 type NavigationProps = {
   Find: any | undefined,
-  Library: any | undefined,
+  LibraryRoutes: any | undefined,
 }
 
 export type AppRouteParamList = {
   navigation: BottomTabNavigationProp<NavigationProps>,
-  route: RouteProp<NavigationProps, 'Find' | 'Library'>
+  route: RouteProp<NavigationProps, 'Find' | 'LibraryRoutes'>
 }
 
 import { Ionicons } from '@expo/vector-icons';
@@ -24,7 +24,7 @@ const returnIcon = (name: string) => {
   }
 }
 
-const routes: React.FC = () => (
+const Routes: React.FC = () => (
 
   <Tabs.Navigator>
 
@@ -35,8 +35,8 @@ const routes: React.FC = () => (
     />
 
     <Tabs.Screen
-      name="Library"
-      component={Library}
+      name="LibraryRoutes"
+      component={LibraryRoutes}
       options={returnIcon('ios-albums')}
     />
 
@@ -44,4 +44,4 @@ const routes: React.FC = () => (
 
 )
 
-export default routes;
+export default Routes;
