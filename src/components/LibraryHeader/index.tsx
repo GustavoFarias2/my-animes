@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
+
+import { tab } from '../../routes/library.routes';
 
 import { View, TouchableOpacity, Text } from 'react-native';
 import styles from './styles';
 
 import { Ionicons } from '@expo/vector-icons';
 
-const LibraryHeader: React.FC = () => {
+interface Props {
+  tabState: [tab[], Dispatch<SetStateAction<tab[]>>]
+}
+
+const LibraryHeader: React.FC<Props> = ({ tabState }) => {
+
+  const [tabs, setTabs] = tabState;
 
   const handleClick = () => {
-    alert('clicado')
+    let name = 'teste 32'
+    if (tabs.find((tab) => tab.name === name))
+      alert('ja criada')
+    else
+      setTabs([...tabs, { name }])
   }
 
   return (
