@@ -37,7 +37,7 @@ const Find: React.FC<FindRouteParamList> = (params) => {
           <TextInput name='search' customStyle={{ marginTop: 20 }} placeholder='Search for an Anime' />
         </Form>
 
-        <ScrollView style={{ padding: 10 }}>
+        <ScrollView style={{ paddingVertical: 10 }}>
 
           {data.data.map((anime: Anime) => <AnimeRow key={anime.id} anime={anime} params={params} />)}
 
