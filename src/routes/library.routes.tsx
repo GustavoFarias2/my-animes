@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Dispatch, SetStateAction } from 'react';
+import { AsyncStorage } from 'react-native';
 
 import { RouteProp } from '@react-navigation/native';
 import { MaterialTopTabNavigationProp, createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -16,20 +17,24 @@ export type LibraryouteParamList = {
   route: RouteProp<NavigationProps, 'Library'>
 }
 
-export type tab = {
+export type Tab = {
   name: string
 }
 
 const LibraryRoutes: React.FC = () => {
 
   const [tabs, setTabs] = useState([
-    { name: 'Library' },
-    { name: 'Vendo' },
-    { name: 'vo ve' },
-    { name: 'ja vi' },
+    { name: 'Home' }
   ]);
 
   useEffect(() => {
+    const getTabs = async () => {
+      const tabsInStorage = await AsyncStorage.getItem('@my-animes/tabs');
+
+      tabsInStorage && setTabs(JSON.parse(tabsInStorage));
+    }
+
+    getTabs();
   }, []);
 
   return (

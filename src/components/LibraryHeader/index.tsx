@@ -1,26 +1,33 @@
 import React, { Dispatch, SetStateAction } from 'react';
 
-import { tab } from '../../routes/library.routes';
+import { Tab } from '../../routes/library.routes';
 
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text, AsyncStorage } from 'react-native';
 import styles from './styles';
 
 import { Ionicons } from '@expo/vector-icons';
 
 interface Props {
-  tabState: [tab[], Dispatch<SetStateAction<tab[]>>]
+  tabState: [Tab[], Dispatch<SetStateAction<Tab[]>>]
 }
 
 const LibraryHeader: React.FC<Props> = ({ tabState }) => {
 
   const [tabs, setTabs] = tabState;
 
-  const handleClick = () => {
+  const handleClick = async () => {
     let name = 'teste 32'
     if (tabs.find((tab) => tab.name === name))
       alert('ja criada')
-    else
-      setTabs([...tabs, { name }])
+    else {
+      const newTabs = [...tabs, { name }];
+
+      // const newTabsString = newTabs.map((tab) => JSON.stringify(tab) + ';');
+
+      await AsyncStorage.setItem('@my-animes/tabs', JSON.stringify(newTabs))
+      
+      setTabs(newTabs)
+    }
   }
 
   return (
