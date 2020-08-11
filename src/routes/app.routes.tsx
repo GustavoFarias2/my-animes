@@ -26,7 +26,7 @@ const returnIcon = (name: string) => {
 
 const Routes: React.FC = () => (
 
-  <Tabs.Navigator>
+  <Tabs.Navigator tabBarOptions={{ showLabel: false }}>
 
     <Tabs.Screen
       name="FindRoutes"

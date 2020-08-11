@@ -9,12 +9,12 @@ import Library from '../pages/Library';
 import LibraryHeader from '../components/LibraryHeader';
 
 type NavigationProps = {
-  Library: any,
+  Library: any
 }
 
 export type LibraryouteParamList = {
   navigation: MaterialTopTabNavigationProp<NavigationProps>,
-  route: RouteProp<NavigationProps, 'Library'>
+  route: RouteProp<NavigationProps, 'Library' | any>
 }
 
 export type Tab = {
@@ -48,6 +48,7 @@ const LibraryRoutes: React.FC = () => {
             key={i}
             name={tab.name}
             component={Library}
+            initialParams={{ tabs, setTabs }}
           />
         ))}
 
